@@ -32,3 +32,12 @@ test('shows a link to the github homepage for this repository', async () => {
   });
   expect(link).toHaveAttribute('href', repository.html_url);
 });
+
+test('shows a fileicon with the appropriate icon', async () => {
+  renderComponent();
+
+  const icon = await screen.findByRole('img', { name: /javascript/i });
+
+  // the icon element has a class called js-icon so we try to check if there is the class
+  expect(icon).toHaveClass('js-icon');
+});
