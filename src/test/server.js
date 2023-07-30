@@ -19,6 +19,7 @@ export function createServer(handlerConfig) {
   // define before All, after all and before each
   beforeAll(() => {
     server.listen();
+    console.log('a server is listening!');
   });
 
   afterEach(() => {
@@ -27,5 +28,6 @@ export function createServer(handlerConfig) {
 
   afterAll(() => {
     server.close();
+    console.log('a server is closed!');
   });
 }
